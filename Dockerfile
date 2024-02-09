@@ -15,4 +15,4 @@ RUN python3 -m venv /venv
 ENV PATH="/venv/bin:$PATH"
 
 # Install libraries
-RUN pip3 install numpy pandas matplotlib geopandas folium mapclassify mikeio1d
+RUN pip3 install ipykernel numpy pandas matplotlib geopandas folium mapclassify mikeio1d
