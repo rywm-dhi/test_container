@@ -1,1 +1,1 @@
-python -s -m ipykernel_launcher -f $CONNECTION_FILE
+python3 -s -m ipykernel_launcher
