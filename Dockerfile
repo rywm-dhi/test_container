@@ -16,3 +16,8 @@ ENV PATH="/venv/bin:$PATH"
 
 # Install libraries
 RUN pip3 install ipykernel numpy pandas matplotlib geopandas folium mapclassify mikeio1d
+
+WORKDIR /tmp
+ADD start_kernel.sh .
+
+CMD bash /tmp/start_kernel.sh
