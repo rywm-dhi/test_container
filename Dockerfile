@@ -1,4 +1,4 @@
-FROM python:3.12-bullseyeFROM python:3.10-slim
+FROM python:3.10-slim
 
 RUN pip install --upgrade pip
 RUN pip install numpy pandas ipykernel matplotlib
