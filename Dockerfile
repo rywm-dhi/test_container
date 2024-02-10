@@ -1,4 +1,9 @@
-FROM python:3.7-slim-buster
+FROM python:3.12-bullseyeFROM python:3.10-slim
 
-RUN pip install --upgrade pip ipython ipykernel
-CMD python -m ipykernel_launcher -f $DOCKERNEL_CONNECTION_FILE
+RUN pip install --upgrade pip
+RUN pip install numpy pandas ipykernel matplotlib
+
+WORKDIR /tmp
+ADD start_kernel.sh .
+
+CMD bash /tmp/start_kernel.sh
