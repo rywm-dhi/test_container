@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/dotnet/runtime:8.0
 
 # Install Python
-RUN apt-get update \
-    && apt-get install -y python3 python3-pip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
 
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install numpy pandas ipykernel matplotlib geopandas folium mapclassify mikeio1d
+RUN apt install -y python3.11 python3-pip
+
+
+RUN python3.11 -m pip install --upgrade --break-system-packages pip
+RUN python3.11 -m pip install --break-system-packages numpy pandas ipykernel matplotlib geopandas folium mapclassify mikeio1d
 
 WORKDIR /tmp
 ADD start_kernel.sh .
